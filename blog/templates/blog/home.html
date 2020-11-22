@@ -9,7 +9,7 @@
 <div class="alert alert-light">
     <h1>{{post.title}}</h1>
     <p>{{post.text}}</p>
-    <span class="text-muted">Публикация: {{post.date}}</span>
+    <span class="text-muted">{{post.date|date:"j F Y, время: H:i:s"}}</span>
 
     {% if post.author %}
     <p><b>Автор:</b>
