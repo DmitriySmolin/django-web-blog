@@ -18,3 +18,11 @@ border-color: #bfbfbf;
     color: #b38a22;
     margin-bottom: 10px
 }
+
+.user_image{
+    width:64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
