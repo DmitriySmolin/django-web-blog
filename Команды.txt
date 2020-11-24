@@ -1,7 +1,9 @@
 1. django-admin - список команд
 2. django-admin startproject <name> - инициализация проекта
-3. django-admin managempy startapp <name> - создание компонента
-2. django manage.py makemigrations - добавление класса модели в бд
-3. django manage.py migrate - синхронизация проекта с бд
-4. django manage.py createsuperuser - создание профиля admin
-4. django manage.py sqlmigrate blog 0001  - представление созданной таблицы в sql виде 
+3. django-admin startapp <name> - создание компонента
+4. django manage.py makemigrations - добавление класса модели в бд
+5. django manage.py migrate - синхронизация проекта с бд
+6. django manage.py createsuperuser - создание профиля admin
+7. django manage.py sqlmigrate blog 0001  - представление созданной таблицы в sql виде 
+
+pip install django-crispy-forms
