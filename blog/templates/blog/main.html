@@ -13,34 +13,36 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-    <a class="navbar-brand" href="{% url 'blog-home' %}"><b>Django News</b></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-            aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <a class="navbar-brand" href="{% url 'blog-home' %}"><b>Django News</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+                aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExample09">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'blog-home' %}">Главная</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'blog-contacts' %}">Про нас</a>
-            </li>
-        </ul>
-    </div>
-    <div class="navbar-nav">
-        {% if user.is_authenticated %}
-        <a href="{% url 'news-add' %}" class="btn btn-outline-secondary mr-2">Добавить статью</a>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'blog-home' %}">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog-contacts' %}">Про нас</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            <a href="{% url 'news-add' %}" class="btn btn-outline-secondary mr-2">Добавить статью</a>
             <a href="{% url 'profile' %}" class="btn btn-outline-secondary mr-2">Профиль</a>
             <a href="{% url 'logout' %}" class="btn btn-outline-secondary">Выйти</a>
-        {% else %}
+            {% else %}
             <a href="{% url 'reg' %}" class="btn btn-outline-secondary mr-2">Регистрация</a>
             <a href="{% url 'auth' %}" class="btn btn-outline-secondary">Войти</a>
-        {% endif %}
-    </div>
-</nav>
+            {% endif %}
+        </div>
+    </nav>
+</header>
 
 <main class="container">
 
@@ -50,9 +52,9 @@
 
             {% if messages %}
 
-                {% for message in messages %}
-                <div class="alert alert-success">{{message}}</div>
-                {% endfor %}
+            {% for message in messages %}
+            <div class="alert alert-success">{{message}}</div>
+            {% endfor %}
 
             {% endif %}
 
@@ -81,6 +83,17 @@
     </div>
 
 </main>
+
+<footer class="text-white bg-dark">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Наверх</a>
+        </p>
+        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="/">Посетить главную</a> или прочитать <a href="{% url 'blog-contacts' %}">Про
+            нас</a>.</p>
+    </div>
+</footer>
 
 </body>
 </html>
