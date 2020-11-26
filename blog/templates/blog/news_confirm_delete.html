@@ -1,0 +1,33 @@
+{% extends 'blog/main.html' %}
+
+
+{% block title %} {{title}} {% endblock %}
+
+{% block main_section %}
+<div class="form-section">
+    <h2>Вы точно хотите удалить статью "{{object.title}}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger">Да, удалить</button>
+        <a href="{% url 'news-detail' object.id %}">Нет, отмена</a>
+    </form>
+</div>
+{% endblock main_section %}
+
+<!--aside_news_section-->
+{% block aside_news_section %}
+<h3><b>10 лучших книг по программированию</b></h3>
+<img src="https://itproger.com/img/news/1487168862.jpg" class="img-thumbnail mb-1" alt="news">
+<p>Существует масса книг по программированию, но только небольшая их часть действительно является полезной и не
+    стареющей с годами. Вот о них и пойдет речь!
+
+    Книги по программированию это достаточно сложный материал, который не так уж просто читать. Поэтому чтобы получить
+    максимальную пользу из книг по программированию необходимо выбирать правильных авторов и правильные книги.
+
+    В видео ролике ниже рассказывается про 10 лучших книг по программированию, а также их небольшое описание, чтобы вы
+    могли выбрать что конкретно хотели бы почитать.</p>
+<a href="https://itproger.com/news/20" target="_blank">
+    <button class="btn btn-warning">Посмотреть</button>
+</a>
+{% endblock aside_news_section %}
+<!--aside_news_section-->
